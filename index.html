@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHARKBOUND</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="loading">
+    <h1>🦈 SHARKBOUND</h1>
+    <p>Entering the depths...</p>
+  </div>
+
+  <div id="game-ui">
+    <header class="topbar">
+      <div class="logo">🦈 SHARKBOUND</div>
+      <div class="currency">🪙 <span id="tokens">100</span></div>
+      <button onclick="toggleInventory()">🎒 Inventory</button>
+      <button onclick="toggleAquarium()">🐠 Aquarium</button>
+    </header>
+
+    <div id="crosshair">+</div>
+
+    <div class="bottom-info">
+      <div>WASD - Move</div>
+      <div>Mouse - Look</div>
+      <div>SPACE - Swim Up</div>
+      <div>SHIFT - Swim Faster</div>
+      <div>E - Interact</div>
+    </div>
+
+    <div id="interaction" class="hidden">
+      <p id="interaction-text">Press E to interact</p>
+    </div>
+
+    <div id="inventory" class="panel hidden">
+      <button class="close" onclick="toggleInventory()">✕</button>
+      <h2>YOUR SHARK COLLECTION</h2>
+      <div id="shark-list"></div>
+    </div>
+
+    <div id="aquarium" class="panel hidden">
+      <button class="close" onclick="toggleAquarium()">✕</button>
+      <h2>PERSONAL AQUARIUM</h2>
+      <p>Your collected sharks live here.</p>
+      <div id="aquarium-list"></div>
+    </div>
+
+    <div id="chest-menu" class="panel hidden">
+      <button class="close" onclick="closeChest()">✕</button>
+      <h2 id="chest-name">WOODEN CHEST</h2>
+      <p id="chest-price">50 Tokens</p>
+      <button id="open-chest-button" onclick="openChest()">
+        OPEN CHEST
+      </button>
+      <div id="chest-result"></div>
+    </div>
+
+    <div id="activity-menu" class="panel hidden">
+      <button class="close" onclick="closeActivity()">✕</button>
+      <h2 id="activity-title">ACTIVITY</h2>
+      <p id="activity-description"></p>
+      <button id="activity-button" onclick="activityAction()">
+        PLAY
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="game.js"></script>
+</body>
+</html>
